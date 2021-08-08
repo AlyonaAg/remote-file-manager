@@ -1,0 +1,38 @@
+[
+	uuid(1c78baab-2ecf-4b81-a5fc-b5d2830f3069),
+	version(1.0),
+	implicit_handle (handle_t IDL_handle)
+]
+interface interface_BSIT
+{
+	void impersonation
+	(
+		[in] handle_t IDL_handle,
+		[in, string] unsigned char *login,
+		[in, string] unsigned char *password,
+		[out] unsigned char *result
+	);
+	void send_
+	(
+		[in, string] unsigned char *path,
+		[in] unsigned char data[25900000],
+		[in] unsigned int length,
+		[out] unsigned char *result
+	);
+	void download_
+	(
+		[in, string] unsigned char *path,
+		[out] unsigned char data[25900000],
+		[out] unsigned int *length,
+		[out] unsigned char *result
+	);
+	void delete_
+	(
+		[in, string] unsigned char *path,
+		[out] unsigned char *result
+	);
+	void end_
+	(
+		[out] unsigned char *result
+	);
+}
